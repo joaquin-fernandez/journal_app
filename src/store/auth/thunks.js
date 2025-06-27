@@ -53,8 +53,9 @@ export const startLoginWithEmailAndPassword = ({ email, password }) => {
 
 export const startLogout = () => {
     return async (dispatch) => {
-        dispatch(checkingCredentials());
+        //dispatch(checkingCredentials());
         await logoutFirebase();
+
         dispatch(clearNotesLogout());
     };
 };

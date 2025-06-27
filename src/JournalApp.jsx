@@ -1,10 +1,9 @@
-import { AppRouter } from './router/AppRouter';
-import { AppTheme } from './theme';
+import { Outlet } from 'react-router-dom';
 
 export const JournalApp = () => {
     return (
-        <AppTheme>
-            <AppRouter />
-        </AppTheme>
+        <>
+            <Outlet />
+        </>
     );
 };

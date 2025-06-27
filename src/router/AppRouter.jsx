@@ -1,13 +1,13 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { routesConfig } from './routesConfig';
+import { getRoutes } from './Routes';
 import { useCheckAuth } from '../hooks';
 import { CheckingAuth } from '../ui';
 
 export const AppRouter = () => {
     const { status } = useCheckAuth();
-    const router = createBrowserRouter(routesConfig({ status }));
 
     if (status === 'checking') return <CheckingAuth />;
 
+    const router = createBrowserRouter(getRoutes(status));
     return <RouterProvider router={router} />;
 };
